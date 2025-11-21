@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
@@ -305,37 +306,59 @@ class CartScreen extends StatelessWidget {
                                     ),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(17),
-                                      child: CachedNetworkImage(
-                                        imageUrl: product.thumbnail,
-                                        width: 90,
-                                        height: 90,
-                                        fit: BoxFit.cover,
-                                        placeholder: (context, url) =>
-                                            Container(
-                                          width: 90,
-                                          height: 90,
-                                          color: const Color(0xFFFFF0F5),
-                                          child: const Center(
-                                            child: CircularProgressIndicator(
-                                              strokeWidth: 2,
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                      Color(0xFFFF69B4)),
+                                      child: kIsWeb
+                                          ? Image.asset(
+                                              product.thumbnail,
+                                              width: 90,
+                                              height: 90,
+                                              fit: BoxFit.cover,
+                                              errorBuilder:
+                                                  (context, error, stackTrace) =>
+                                                      Container(
+                                                width: 90,
+                                                height: 90,
+                                                color: const Color(0xFFFFF0F5),
+                                                child: const Icon(
+                                                  Icons.favorite_rounded,
+                                                  color: Color(0xFFFF69B4),
+                                                  size: 40,
+                                                ),
+                                              ),
+                                            )
+                                          : CachedNetworkImage(
+                                              imageUrl: product.thumbnail,
+                                              width: 90,
+                                              height: 90,
+                                              fit: BoxFit.cover,
+                                              placeholder: (context, url) =>
+                                                  Container(
+                                                width: 90,
+                                                height: 90,
+                                                color: const Color(0xFFFFF0F5),
+                                                child: const Center(
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    strokeWidth: 2,
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                                Color>(
+                                                            Color(0xFFFF69B4)),
+                                                  ),
+                                                ),
+                                              ),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Container(
+                                                width: 90,
+                                                height: 90,
+                                                color: const Color(0xFFFFF0F5),
+                                                child: const Icon(
+                                                  Icons.favorite_rounded,
+                                                  color: Color(0xFFFF69B4),
+                                                  size: 40,
+                                                ),
+                                              ),
                                             ),
-                                          ),
-                                        ),
-                                        errorWidget: (context, url, error) =>
-                                            Container(
-                                          width: 90,
-                                          height: 90,
-                                          color: const Color(0xFFFFF0F5),
-                                          child: const Icon(
-                                            Icons.favorite_rounded,
-                                            color: Color(0xFFFF69B4),
-                                            size: 40,
-                                          ),
-                                        ),
-                                      ),
                                     ),
                                   ),
                                   const SizedBox(width: 16),

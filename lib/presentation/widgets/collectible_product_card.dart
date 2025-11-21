@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -248,53 +249,85 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(14),
-                        child: CachedNetworkImage(
-                          imageUrl: widget.product.thumbnail,
-                          fit: BoxFit.cover,
-                          placeholder: (context, url) => Container(
-                            color: const Color(0xFFFFF5F7),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CircularProgressIndicator(
-                                  color: _getCardColor(),
-                                  strokeWidth: 2,
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  '(◕‿◕)',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.grey[300],
+                        child: kIsWeb
+                            ? Image.asset(
+                                widget.product.thumbnail,
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  print('Error loading image: ${widget.product.thumbnail}');
+                                  print('Error details: $error');
+                                  return Container(
+                                    color: const Color(0xFFFFF5F7),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '✿',
+                                          style: TextStyle(
+                                            fontSize: 40,
+                                            color: _getCardColor(),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        const Text(
+                                          '(>_<)',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            color: Color(0xFFB8A8A8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              )
+                            : CachedNetworkImage(
+                                imageUrl: widget.product.thumbnail,
+                                fit: BoxFit.cover,
+                                placeholder: (context, url) => Container(
+                                  color: const Color(0xFFFFF5F7),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      CircularProgressIndicator(
+                                        color: _getCardColor(),
+                                        strokeWidth: 2,
+                                      ),
+                                      const SizedBox(height: 8),
+                                      Text(
+                                        '(◕‿◕)',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.grey[300],
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ],
-                            ),
-                          ),
-                          errorWidget: (context, url, error) => Container(
-                            color: const Color(0xFFFFF5F7),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '✿',
-                                  style: TextStyle(
-                                    fontSize: 40,
-                                    color: _getCardColor(),
+                                errorWidget: (context, url, error) => Container(
+                                  color: const Color(0xFFFFF5F7),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        '✿',
+                                        style: TextStyle(
+                                          fontSize: 40,
+                                          color: _getCardColor(),
+                                        ),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      const Text(
+                                        '(>_<)',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Color(0xFFB8A8A8),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                const SizedBox(height: 8),
-                                const Text(
-                                  '(>_<)',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color(0xFFB8A8A8),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                              ),
                       ),
                     ),
                   ),

@@ -84,20 +84,30 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       });
                     },
                     itemBuilder: (context, index) {
-                      return CachedNetworkImage(
-                        imageUrl: product.images[index],
-                        fit: BoxFit.cover,
-                        placeholder: (context, url) => Container(
-                          color: Colors.grey[200],
-                          child: const Center(
-                            child: CircularProgressIndicator(),
-                          ),
-                        ),
-                        errorWidget: (context, url, error) => Container(
-                          color: Colors.grey[200],
-                          child: const Icon(Icons.error),
-                        ),
-                      );
+                      return kIsWeb
+                          ? Image.asset(
+                              product.images[index],
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  Container(
+                                color: Colors.grey[200],
+                                child: const Icon(Icons.error),
+                              ),
+                            )
+                          : CachedNetworkImage(
+                              imageUrl: product.images[index],
+                              fit: BoxFit.cover,
+                              placeholder: (context, url) => Container(
+                                color: Colors.grey[200],
+                                child: const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              ),
+                              errorWidget: (context, url, error) => Container(
+                                color: Colors.grey[200],
+                                child: const Icon(Icons.error),
+                              ),
+                            );
                     },
                   ),
                 ),
