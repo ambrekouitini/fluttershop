@@ -1,0 +1,112 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Sticker Hello Kitty Classic",
+      "price": 3.99,
+      "description": "Sticker Hello Kitty classique et adorable. Parfait pour décorer vos cahiers, ordinateur portable ou téléphone. Autocollant de haute qualité, résistant à l'eau.",
+      "category": "Stickers",
+      "thumbnail": "assets/images/hellokitty.png",
+      "images": ["assets/images/hellokitty.png"]
+    },
+    {
+      "id": "2",
+      "title": "Sticker Hello Kitty Teddy Bear",
+      "price": 4.49,
+      "description": "Hello Kitty câlinant son nounours préféré. Sticker kawaii ultra mignon pour ajouter une touche de douceur à vos affaires. Qualité premium waterproof.",
+      "category": "Stickers",
+      "thumbnail": "assets/images/hellokittybear.png",
+      "images": ["assets/images/hellokittybear.png"]
+    },
+    {
+      "id": "3",
+      "title": "Sticker Hello Kitty Photographer",
+      "price": 4.49,
+      "description": "Hello Kitty avec son appareil photo vintage. Sticker parfait pour les amateurs de photographie. Design rétro et adorable, résistant et durable.",
+      "category": "Stickers",
+      "thumbnail": "assets/images/hellokittycamera.png",
+      "images": ["assets/images/hellokittycamera.png"]
+    },
+    {
+      "id": "4",
+      "title": "Emote Hello Kitty Christmas",
+      "price": 4.99,
+      "description": "Hello Kitty en tenue de Noël festive. Emote parfait pour la saison des fêtes. Décorez vos cadeaux et créez une ambiance kawaii pour les fêtes.",
+      "category": "Emotes",
+      "thumbnail": "assets/images/hellokittychrismas.png",
+      "images": ["assets/images/hellokittychrismas.png"]
+    },
+    {
+      "id": "5",
+      "title": "Emote Hello Kitty Chocolate Milk",
+      "price": 4.29,
+      "description": "Hello Kitty savourant un délicieux chocolat chaud. Emote gourmand et mignon, parfait pour exprimer vos envies de boissons sucrées. Waterproof et résistant.",
+      "category": "Emotes",
+      "thumbnail": "assets/images/hellokittydrinkingchocolatemilk.png",
+      "images": ["assets/images/hellokittydrinkingchocolatemilk.png"]
+    },
+    {
+      "id": "6",
+      "title": "Sticker Hello Kitty Flowers",
+      "price": 4.49,
+      "description": "Hello Kitty entourée de jolies fleurs. Design floral kawaii parfait pour le printemps. Autocollant haute qualité pour embellir vos objets préférés.",
+      "category": "Stickers",
+      "thumbnail": "assets/images/hellokittyflowers.png",
+      "images": ["assets/images/hellokittyflowers.png"]
+    },
+    {
+      "id": "7",
+      "title": "Emote Hello Kitty Love",
+      "price": 4.49,
+      "description": "Hello Kitty avec des cœurs romantiques. Emote adorable pour exprimer votre amour. Parfait pour la Saint-Valentin ou toute occasion spéciale.",
+      "category": "Emotes",
+      "thumbnail": "assets/images/hellokittylove.png",
+      "images": ["assets/images/hellokittylove.png"]
+    },
+    {
+      "id": "8",
+      "title": "Sticker Hello Kitty Nurse",
+      "price": 4.49,
+      "description": "Hello Kitty infirmière prête à soigner. Autocollant kawaii parfait pour les professionnels de santé ou les fans du domaine médical. Design mignon et waterproof.",
+      "category": "Stickers",
+      "thumbnail": "assets/images/hellokittynurse.png",
+      "images": ["assets/images/hellokittynurse.png"]
+    },
+    {
+      "id": "9",
+      "title": "Emote Hello Kitty Peace",
+      "price": 4.29,
+      "description": "Hello Kitty faisant le signe peace. Emote cool et positif, parfait pour diffuser de bonnes vibes. Résistant à l'eau et aux rayures.",
+      "category": "Emotes",
+      "thumbnail": "assets/images/hellokittypeace.png",
+      "images": ["assets/images/hellokittypeace.png"]
+    },
+    {
+      "id": "10",
+      "title": "Sticker Hello Kitty Sunglasses",
+      "price": 4.49,
+      "description": "Hello Kitty stylée avec des lunettes de soleil. Autocollant tendance et kawaii pour un look cool. Qualité premium, résistant aux intempéries.",
+      "category": "Stickers",
+      "thumbnail": "assets/images/hellokittysunglasses.png",
+      "images": ["assets/images/hellokittysunglasses.png"]
+    },
+    {
+      "id": "11",
+      "title": "Emote Hello Kitty Waving",
+      "price": 3.99,
+      "description": "Hello Kitty vous faisant un petit coucou amical. Emote adorable pour dire bonjour. Design simple et mignon, parfait pour tous vos objets.",
+      "category": "Emotes",
+      "thumbnail": "assets/images/hellokittywaving.png",
+      "images": ["assets/images/hellokittywaving.png"]
+    },
+    {
+      "id": "12",
+      "title": "Emote Hello Kitty Winking",
+      "price": 4.29,
+      "description": "Hello Kitty avec un clin d'œil complice. Emote espiègle et mignon, parfait pour ajouter du charme à vos affaires. Waterproof haute qualité.",
+      "category": "Emotes",
+      "thumbnail": "assets/images/hellokittywinking.png",
+      "images": ["assets/images/hellokittywinking.png"]
+    }
+  ]
+}
