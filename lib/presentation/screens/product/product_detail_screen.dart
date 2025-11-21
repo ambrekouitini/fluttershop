@@ -21,8 +21,7 @@ class ProductDetailScreen extends StatefulWidget {
   });
 
   @override
-  State<ProductDetailScreen> createState() =>
-      _ProductDetailScreenState();
+  State<ProductDetailScreen> createState() => _ProductDetailScreenState();
 }
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
@@ -37,12 +36,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   }
 
   Future<void> _loadProduct() async {
-    final catalogViewModel = Provider.of<CatalogViewModel>(context, listen: false);
+    final catalogViewModel =
+        Provider.of<CatalogViewModel>(context, listen: false);
     _product = catalogViewModel.getProductById(widget.productId);
     if (mounted) setState(() {});
   }
 
-  Widget _buildShareButton(ProductModel product, NumberFormat currencyFormatter) {
+  Widget _buildShareButton(
+      ProductModel product, NumberFormat currencyFormatter) {
     return IconButton(
       icon: const Icon(Icons.share),
       onPressed: () async {
@@ -64,7 +65,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Widget _buildBody(ProductModel product, NumberFormat currencyFormatter, BuildContext context) {
+  Widget _buildBody(ProductModel product, NumberFormat currencyFormatter,
+      BuildContext context) {
     return Column(
       children: [
         Expanded(
@@ -127,12 +129,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     children: [
                       Text(
                         product.title,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineSmall
-                            ?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
+                        style:
+                            Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
                       ),
                       const SizedBox(height: 8),
                       Chip(
@@ -153,10 +153,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       const SizedBox(height: 24),
                       Text(
                         'Description',
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge
-                            ?.copyWith(
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -190,8 +187,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             ),
                             child: Text(
                               '$_quantity',
-                              style:
-                                  Theme.of(context).textTheme.titleMedium,
+                              style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ),
                           IconButton(
@@ -225,7 +221,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () async {
-                  await context.read<CartViewModel>()
+                  await context
+                      .read<CartViewModel>()
                       .addProduct(product, quantity: _quantity);
 
                   if (!context.mounted) return;
@@ -234,12 +231,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     SnackBar(
                       content: Row(
                         children: [
-                          const Icon(Icons.check_circle_rounded, color: Colors.white, size: 20),
+                          const Icon(Icons.check_circle_rounded,
+                              color: Colors.white, size: 20),
                           const SizedBox(width: 12),
                           Expanded(
                             child: Text(
                               '$_quantity ${_quantity > 1 ? "articles ajoutés" : "article ajouté"} au panier',
-                              style: const TextStyle(fontWeight: FontWeight.w600),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.w600),
                             ),
                           ),
                         ],

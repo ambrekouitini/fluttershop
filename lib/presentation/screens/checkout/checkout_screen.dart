@@ -232,7 +232,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
-                                color: const Color(0xFFFF69B4).withValues(alpha: 0.4),
+                                color: const Color(0xFFFF69B4)
+                                    .withValues(alpha: 0.4),
                                 blurRadius: 15,
                                 offset: const Offset(0, 5),
                               ),
@@ -312,7 +313,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             border: Border.all(color: const Color(0xFFFFD4E5), width: 2),
           ),
           child: IconButton(
-            icon: const Icon(Icons.arrow_back_rounded, color: Color(0xFFFF69B4)),
+            icon:
+                const Icon(Icons.arrow_back_rounded, color: Color(0xFFFF69B4)),
             onPressed: () => context.go('/cart'),
           ),
         ),
@@ -362,7 +364,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         borderRadius: BorderRadius.circular(25),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFFFF69B4).withValues(alpha: 0.4),
+                            color:
+                                const Color(0xFFFF69B4).withValues(alpha: 0.4),
                             blurRadius: 15,
                             offset: const Offset(0, 5),
                           ),
@@ -400,7 +403,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 24, horizontal: 20),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         begin: Alignment.topCenter,
@@ -443,13 +447,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         ),
                         const SizedBox(height: 6),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 6),
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [Color(0xFFFFF0F5), Color(0xFFFFFBF5)],
                             ),
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: const Color(0xFFFFE4E5), width: 2),
+                            border: Border.all(
+                                color: const Color(0xFFFFE4E5), width: 2),
                           ),
                           child: const Text(
                             '✨ Une dernière étape magique ✨',
@@ -463,7 +469,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ],
                     ),
                   ),
-
                   Expanded(
                     child: SingleChildScrollView(
                       padding: const EdgeInsets.all(20),
@@ -534,7 +539,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             ],
                           ),
                           const SizedBox(height: 32),
-
                           _buildSectionTitle('💳 Paiement (Démo)'),
                           const SizedBox(height: 8),
                           Container(
@@ -551,7 +555,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             ),
                             child: const Row(
                               children: [
-                                Icon(Icons.info_rounded, color: Color(0xFFFFB5D6), size: 20),
+                                Icon(Icons.info_rounded,
+                                    color: Color(0xFFFFB5D6), size: 20),
                                 SizedBox(width: 8),
                                 Expanded(
                                   child: Text(
@@ -617,7 +622,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             ],
                           ),
                           const SizedBox(height: 32),
-
                           _buildSectionTitle('✨ Récapitulatif'),
                           const SizedBox(height: 16),
                           Container(
@@ -631,7 +635,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: const Color(0xFFFFB5D6).withValues(alpha: 0.15),
+                                  color: const Color(0xFFFFB5D6)
+                                      .withValues(alpha: 0.15),
                                   blurRadius: 20,
                                   offset: const Offset(0, 5),
                                 ),
@@ -640,7 +645,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             child: Column(
                               children: [
                                 ...cartViewModel.items.map((item) => Padding(
-                                      padding: const EdgeInsets.only(bottom: 12),
+                                      padding:
+                                          const EdgeInsets.only(bottom: 12),
                                       child: Row(
                                         children: [
                                           Container(
@@ -650,9 +656,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                             ),
                                             decoration: BoxDecoration(
                                               gradient: const LinearGradient(
-                                                colors: [Color(0xFFFFDAE9), Color(0xFFFFF0F5)],
+                                                colors: [
+                                                  Color(0xFFFFDAE9),
+                                                  Color(0xFFFFF0F5)
+                                                ],
                                               ),
-                                              borderRadius: BorderRadius.circular(8),
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
                                             ),
                                             child: Text(
                                               'x${item.quantity}',
@@ -675,7 +685,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                             ),
                                           ),
                                           Text(
-                                            currencyFormatter.format(item.totalPrice),
+                                            currencyFormatter
+                                                .format(item.totalPrice),
                                             style: const TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.w800,
@@ -686,7 +697,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                       ),
                                     )),
                                 Container(
-                                  margin: const EdgeInsets.symmetric(vertical: 16),
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 16),
                                   height: 2,
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
@@ -716,12 +728,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                       ),
                                       decoration: BoxDecoration(
                                         gradient: const LinearGradient(
-                                          colors: [Color(0xFFFFDAE9), Color(0xFFFFF0F5)],
+                                          colors: [
+                                            Color(0xFFFFDAE9),
+                                            Color(0xFFFFF0F5)
+                                          ],
                                         ),
                                         borderRadius: BorderRadius.circular(16),
                                       ),
                                       child: Text(
-                                        currencyFormatter.format(cartViewModel.totalAmount),
+                                        currencyFormatter
+                                            .format(cartViewModel.totalAmount),
                                         style: const TextStyle(
                                           fontSize: 24,
                                           fontWeight: FontWeight.w900,
@@ -769,7 +785,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           borderRadius: BorderRadius.circular(25),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFFFF69B4).withValues(alpha: 0.5),
+                              color: const Color(0xFFFF69B4)
+                                  .withValues(alpha: 0.5),
                               blurRadius: 20,
                               spreadRadius: 2,
                               offset: const Offset(0, 8),
@@ -792,7 +809,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   width: 24,
                                   child: CircularProgressIndicator(
                                     strokeWidth: 2.5,
-                                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        Colors.white),
                                   ),
                                 )
                               : const Row(

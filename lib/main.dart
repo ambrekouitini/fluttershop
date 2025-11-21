@@ -32,19 +32,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => AuthViewModel(),
         ),
-        
         ChangeNotifierProvider(
           create: (_) => CatalogViewModel(),
         ),
-        
         ChangeNotifierProvider(
           create: (_) => CartViewModel(),
         ),
-        
         ChangeNotifierProvider(
           create: (_) => CheckoutViewModel(),
         ),
-        
         ChangeNotifierProvider(
           create: (_) => OrdersViewModel(),
         ),

@@ -11,7 +11,10 @@ void main() {
         'description': 'A test product',
         'category': 'Electronics',
         'thumbnail': 'https://example.com/image.jpg',
-        'images': ['https://example.com/image1.jpg', 'https://example.com/image2.jpg'],
+        'images': [
+          'https://example.com/image1.jpg',
+          'https://example.com/image2.jpg'
+        ],
       };
 
       final product = ProductModel.fromJson(json);

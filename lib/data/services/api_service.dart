@@ -5,7 +5,8 @@ import '../models/product_model.dart';
 class ApiService {
   Future<List<ProductModel>> fetchProducts() async {
     try {
-      final String response = await rootBundle.loadString('assets/data/products.json');
+      final String response =
+          await rootBundle.loadString('assets/data/products.json');
       final Map<String, dynamic> data = json.decode(response);
       final List<dynamic> productsJson = data['products'] as List<dynamic>;
 

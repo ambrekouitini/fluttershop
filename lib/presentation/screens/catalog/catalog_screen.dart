@@ -12,7 +12,8 @@ class CatalogScreen extends StatefulWidget {
   State<CatalogScreen> createState() => _CatalogScreenState();
 }
 
-class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProviderStateMixin {
+class _CatalogScreenState extends State<CatalogScreen>
+    with SingleTickerProviderStateMixin {
   final _searchController = TextEditingController();
   late AnimationController _headerAnimationController;
   late Animation<double> _headerAnimation;
@@ -103,7 +104,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFFFF69B4).withValues(alpha: 0.3),
+                              color: const Color(0xFFFF69B4)
+                                  .withValues(alpha: 0.3),
                               blurRadius: 6,
                               spreadRadius: 1,
                             ),
@@ -155,7 +157,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
               ).animate(_headerAnimation),
               child: Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
@@ -191,11 +194,13 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                     ),
                     const SizedBox(height: 6),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 6),
                       decoration: BoxDecoration(
                         color: const Color(0xFFFFF0F5),
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: const Color(0xFFFFE4E5), width: 2),
+                        border: Border.all(
+                            color: const Color(0xFFFFE4E5), width: 2),
                       ),
                       child: const Text(
                         'Explore notre collection',
@@ -211,7 +216,6 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
               ),
             ),
           ),
-
           Container(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 16),
             decoration: BoxDecoration(
@@ -241,7 +245,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFFFFB5D6).withValues(alpha: 0.15),
+                            color:
+                                const Color(0xFFFFB5D6).withValues(alpha: 0.15),
                             blurRadius: 20,
                             spreadRadius: 2,
                             offset: const Offset(0, 5),
@@ -290,7 +295,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                                     ),
                                     onPressed: () {
                                       _searchController.clear();
-                                      Provider.of<CatalogViewModel>(context, listen: false)
+                                      Provider.of<CatalogViewModel>(context,
+                                              listen: false)
                                           .searchProducts('');
                                       setState(() {});
                                     },
@@ -321,7 +327,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                       builder: (context, catalogViewModel, _) {
                         return Container(
                           height: 56,
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
                             color: const Color(0xFFFFF0F5),
                             borderRadius: BorderRadius.circular(20),
@@ -337,15 +344,20 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                               _buildCompactCategoryPill(
                                 context: context,
                                 label: 'Tout',
-                                isSelected: catalogViewModel.selectedCategory.isEmpty,
-                                onTap: () => catalogViewModel.filterByCategory(''),
+                                isSelected:
+                                    catalogViewModel.selectedCategory.isEmpty,
+                                onTap: () =>
+                                    catalogViewModel.filterByCategory(''),
                               ),
                               ...catalogViewModel.categories.map(
                                 (category) => _buildCompactCategoryPill(
                                   context: context,
                                   label: category,
-                                  isSelected: catalogViewModel.selectedCategory == category,
-                                  onTap: () => catalogViewModel.filterByCategory(category),
+                                  isSelected:
+                                      catalogViewModel.selectedCategory ==
+                                          category,
+                                  onTap: () => catalogViewModel
+                                      .filterByCategory(category),
                                 ),
                               ),
                             ],
@@ -373,7 +385,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                             shape: BoxShape.circle,
                           ),
                           child: const CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFFF69B4)),
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                                Color(0xFFFF69B4)),
                             strokeWidth: 3,
                           ),
                         ),
@@ -399,7 +412,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: const Color(0xFFFF9FB0), width: 3),
+                        border: Border.all(
+                            color: const Color(0xFFFF9FB0), width: 3),
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -422,7 +436,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                           ElevatedButton(
                             onPressed: () => catalogViewModel.refreshProducts(),
                             style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 32, vertical: 16),
                               backgroundColor: const Color(0xFFFFB5D6),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
@@ -450,7 +465,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: const Color(0xFFFFD4E5), width: 3),
+                        border: Border.all(
+                            color: const Color(0xFFFFD4E5), width: 3),
                       ),
                       child: const Column(
                         mainAxisSize: MainAxisSize.min,
@@ -483,7 +499,8 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
                   child: GridView.builder(
                     padding: const EdgeInsets.all(16),
                     physics: const BouncingScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 0.7,
                       crossAxisSpacing: 14,
@@ -527,7 +544,9 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
               color: isSelected ? const Color(0xFFFF69B4) : Colors.white,
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: isSelected ? const Color(0xFFFF69B4) : const Color(0xFFFFDAE9),
+                color: isSelected
+                    ? const Color(0xFFFF69B4)
+                    : const Color(0xFFFFDAE9),
                 width: 2,
               ),
             ),
@@ -545,5 +564,4 @@ class _CatalogScreenState extends State<CatalogScreen> with SingleTickerProvider
       ),
     );
   }
-
 }

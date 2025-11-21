@@ -107,7 +107,8 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
         _hoverController.reverse();
       },
       child: AnimatedBuilder(
-        animation: Listenable.merge([_hoverController, _flipController, _shineController]),
+        animation: Listenable.merge(
+            [_hoverController, _flipController, _shineController]),
         builder: (context, child) {
           return Transform(
             transform: Matrix4.identity()
@@ -163,7 +164,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                 color: _getCardColor().withValues(alpha: 0.15),
               ),
             ),
-
             Positioned(
               left: _shineAnimation.value * 200,
               top: -100,
@@ -178,7 +178,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                 ),
               ),
             ),
-
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -188,7 +187,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                     color: _getCardColor(),
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.all(12),
                   child: Row(
@@ -216,7 +214,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                           ),
                         ),
                       ),
-
                       Row(
                         children: List.generate(
                           _getCardRarity(),
@@ -236,7 +233,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                     ],
                   ),
                 ),
-
                 Expanded(
                   flex: 3,
                   child: Padding(
@@ -303,7 +299,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                     ),
                   ),
                 ),
-
                 Expanded(
                   flex: 2,
                   child: Container(
@@ -329,7 +324,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
-
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -341,7 +335,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                                 fontSize: 16,
                               ),
                             ),
-
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
@@ -349,7 +342,8 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: _getCardColor().withValues(alpha: 0.5),
+                                    color:
+                                        _getCardColor().withValues(alpha: 0.5),
                                     blurRadius: 8,
                                     offset: const Offset(0, 4),
                                   ),
@@ -363,7 +357,6 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                             ),
                           ],
                         ),
-
                         if (_isHovered)
                           Text(
                             '✨ Double-tap pour plus d\'infos',

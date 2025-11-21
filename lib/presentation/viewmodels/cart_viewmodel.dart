@@ -10,7 +10,8 @@ class CartViewModel extends BaseViewModel {
 
   List<CartItemModel> get items => _items;
   int get itemCount => _items.fold(0, (sum, item) => sum + item.quantity);
-  double get totalAmount => _items.fold(0.0, (sum, item) => sum + item.totalPrice);
+  double get totalAmount =>
+      _items.fold(0.0, (sum, item) => sum + item.totalPrice);
   String get formattedTotal => '${totalAmount.toStringAsFixed(2)} €';
   bool get isEmpty => _items.isEmpty;
 
@@ -29,7 +30,8 @@ class CartViewModel extends BaseViewModel {
 
   Future<void> addProduct(ProductModel product, {int quantity = 1}) async {
     try {
-      final existingIndex = _items.indexWhere((item) => item.product.id == product.id);
+      final existingIndex =
+          _items.indexWhere((item) => item.product.id == product.id);
 
       if (existingIndex != -1) {
         _items[existingIndex].quantity += quantity;

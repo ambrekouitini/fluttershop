@@ -16,7 +16,8 @@ void main() {
       images: ['https://example.com/image1.jpg'],
     );
 
-    testWidgets('should display product information', (WidgetTester tester) async {
+    testWidgets('should display product information',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -42,7 +43,8 @@ void main() {
       expect(find.byType(CachedNetworkImage), findsOneWidget);
     });
 
-    testWidgets('should be wrapped in a Card widget', (WidgetTester tester) async {
+    testWidgets('should be wrapped in a Card widget',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(

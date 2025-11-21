@@ -27,7 +27,7 @@ class CacheService {
     if (lastUpdateStr != null) {
       final lastUpdate = DateTime.parse(lastUpdateStr);
       if (DateTime.now().difference(lastUpdate) > cacheValidity) {
-        return []; 
+        return [];
       }
     }
 

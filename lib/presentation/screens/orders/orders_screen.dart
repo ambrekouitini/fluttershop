@@ -67,7 +67,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
             border: Border.all(color: const Color(0xFFFFD4E5), width: 2),
           ),
           child: IconButton(
-            icon: const Icon(Icons.arrow_back_rounded, color: Color(0xFFFF69B4)),
+            icon:
+                const Icon(Icons.arrow_back_rounded, color: Color(0xFFFF69B4)),
             onPressed: () => context.go('/catalog'),
           ),
         ),
@@ -92,7 +93,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
                           const SizedBox(height: 8),
-                          const Text('Commencez vos achats pour voir vos commandes'),
+                          const Text(
+                              'Commencez vos achats pour voir vos commandes'),
                           const SizedBox(height: 24),
                           ElevatedButton(
                             onPressed: () => context.go('/catalog'),
@@ -110,7 +112,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
                         return Card(
                           margin: const EdgeInsets.only(bottom: 16),
                           elevation: 4,
-                          shadowColor: const Color(0xFFFFB6C1).withValues(alpha: 0.3),
+                          shadowColor:
+                              const Color(0xFFFFB6C1).withValues(alpha: 0.3),
                           child: ExpansionTile(
                             leading: Container(
                               padding: const EdgeInsets.all(10),
@@ -119,7 +122,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                 borderRadius: BorderRadius.circular(16),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: _getStatusColor(order.status).withValues(alpha: 0.3),
+                                    color: _getStatusColor(order.status)
+                                        .withValues(alpha: 0.3),
                                     blurRadius: 8,
                                     spreadRadius: 2,
                                   ),
@@ -133,7 +137,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
                             ),
                             title: Text(
                               'Commande #${order.id.substring(0, 8)}',
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                             ),
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,7 +197,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                     ),
                                     const SizedBox(height: 12),
                                     ...order.items.map((item) => Padding(
-                                          padding: const EdgeInsets.only(bottom: 8),
+                                          padding:
+                                              const EdgeInsets.only(bottom: 8),
                                           child: Row(
                                             children: [
                                               Expanded(

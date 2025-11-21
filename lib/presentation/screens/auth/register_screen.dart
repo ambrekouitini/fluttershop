@@ -204,13 +204,13 @@ class _RegisterScreenState extends State<RegisterScreen>
                 child: Container(
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyIiBmaWxsPSIjZjBmMGYwIi8+PC9zdmc+'),
+                      image: NetworkImage(
+                          'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyIiBmaWxsPSIjZjBmMGYwIi8+PC9zdmc+'),
                       repeat: ImageRepeat.repeat,
                     ),
                   ),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.all(32),
                 child: Form(
@@ -260,7 +260,6 @@ class _RegisterScreenState extends State<RegisterScreen>
                             ),
                           ),
                           const SizedBox(height: 32),
-
                           Container(
                             padding: const EdgeInsets.all(18),
                             decoration: BoxDecoration(
@@ -282,9 +281,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                               ),
                             ),
                           ),
-
                           const SizedBox(height: 32),
-
                           KawaiiTextField(
                             controller: _nameController,
                             labelText: 'Nom',
@@ -297,9 +294,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                               return null;
                             },
                           ),
-
                           const SizedBox(height: 20),
-
                           KawaiiTextField(
                             controller: _emailController,
                             labelText: 'Email',
@@ -316,9 +311,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                               return null;
                             },
                           ),
-
                           const SizedBox(height: 20),
-
                           KawaiiTextField(
                             controller: _passwordController,
                             labelText: 'Mot de passe',
@@ -348,9 +341,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                               return null;
                             },
                           ),
-
                           const SizedBox(height: 20),
-
                           KawaiiTextField(
                             controller: _confirmPasswordController,
                             labelText: 'Confirmer mot de passe',
@@ -366,7 +357,8 @@ class _RegisterScreenState extends State<RegisterScreen>
                               ),
                               onPressed: () {
                                 setState(() {
-                                  _obscureConfirmPassword = !_obscureConfirmPassword;
+                                  _obscureConfirmPassword =
+                                      !_obscureConfirmPassword;
                                 });
                               },
                             ),
@@ -380,26 +372,25 @@ class _RegisterScreenState extends State<RegisterScreen>
                               return null;
                             },
                           ),
-
                           const SizedBox(height: 32),
-
                           KawaiiButton(
-                            text: authViewModel.isLoading ? 'Chargement...' : 'Commencer l\'aventure',
+                            text: authViewModel.isLoading
+                                ? 'Chargement...'
+                                : 'Commencer l\'aventure',
                             icon: Icons.star_rounded,
                             onPressed: authViewModel.isLoading
                                 ? null
                                 : () => _handleRegister(context),
                             isLoading: authViewModel.isLoading,
                           ),
-
                           const SizedBox(height: 24),
-
                           Row(
                             children: [
                               Expanded(
                                 child: Container(
                                   height: 2,
-                                  color: const Color(0xFFFFD4E5).withValues(alpha: 0.5),
+                                  color: const Color(0xFFFFD4E5)
+                                      .withValues(alpha: 0.5),
                                 ),
                               ),
                               const Padding(
@@ -416,14 +407,13 @@ class _RegisterScreenState extends State<RegisterScreen>
                               Expanded(
                                 child: Container(
                                   height: 2,
-                                  color: const Color(0xFFFFD4E5).withValues(alpha: 0.5),
+                                  color: const Color(0xFFFFD4E5)
+                                      .withValues(alpha: 0.5),
                                 ),
                               ),
                             ],
                           ),
-
                           const SizedBox(height: 24),
-
                           Container(
                             height: 58,
                             decoration: BoxDecoration(
@@ -435,7 +425,8 @@ class _RegisterScreenState extends State<RegisterScreen>
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: const Color(0xFFD4E5FF).withValues(alpha: 0.3),
+                                  color: const Color(0xFFD4E5FF)
+                                      .withValues(alpha: 0.3),
                                   blurRadius: 15,
                                   offset: const Offset(0, 5),
                                 ),
@@ -477,9 +468,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                               ),
                             ),
                           ),
-
                           const SizedBox(height: 32),
-
                           Container(
                             padding: const EdgeInsets.all(18),
                             decoration: BoxDecoration(

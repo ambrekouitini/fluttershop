@@ -208,13 +208,15 @@ class _KawaiiButtonState extends State<KawaiiButton>
             gradient: LinearGradient(
               colors: [
                 widget.backgroundColor ?? const Color(0xFFFFB5D6),
-                widget.backgroundColor?.withValues(alpha: 0.8) ?? const Color(0xFFFF9FC9),
+                widget.backgroundColor?.withValues(alpha: 0.8) ??
+                    const Color(0xFFFF9FC9),
               ],
             ),
             borderRadius: BorderRadius.circular(30),
             boxShadow: [
               BoxShadow(
-                color: (widget.backgroundColor ?? const Color(0xFFFFB5D6)).withValues(alpha: 0.4),
+                color: (widget.backgroundColor ?? const Color(0xFFFFB5D6))
+                    .withValues(alpha: 0.4),
                 blurRadius: 20,
                 offset: const Offset(0, 8),
               ),
@@ -232,7 +234,8 @@ class _KawaiiButtonState extends State<KawaiiButton>
                         width: 24,
                         child: CircularProgressIndicator(
                           strokeWidth: 2.5,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.white),
                         ),
                       )
                     : Row(

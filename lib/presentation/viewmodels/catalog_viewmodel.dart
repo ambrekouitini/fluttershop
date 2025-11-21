@@ -12,8 +12,10 @@ class CatalogViewModel extends BaseViewModel {
   String _selectedCategory = '';
   String _searchQuery = '';
 
-  List<ProductModel> get products => _filteredProducts.isEmpty && _searchQuery.isEmpty && _selectedCategory.isEmpty 
-      ? _allProducts 
+  List<ProductModel> get products => _filteredProducts.isEmpty &&
+          _searchQuery.isEmpty &&
+          _selectedCategory.isEmpty
+      ? _allProducts
       : _filteredProducts;
   List<String> get categories => _categories;
   String get selectedCategory => _selectedCategory;
@@ -31,7 +33,7 @@ class CatalogViewModel extends BaseViewModel {
 
   Future<void> loadProducts() async {
     if (isLoading) return;
-    
+
     setLoading(true);
     clearError();
 

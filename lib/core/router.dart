@@ -22,8 +22,8 @@ class AppRouter {
     refreshListenable: GoRouterRefreshStream(firebaseAuth.authStateChanges()),
     redirect: (context, state) {
       final isLoggedIn = firebaseAuth.currentUser != null;
-      final isLoggingIn = state.matchedLocation == '/login' || 
-                          state.matchedLocation == '/register';
+      final isLoggingIn = state.matchedLocation == '/login' ||
+          state.matchedLocation == '/register';
 
       if (!isLoggedIn && !isLoggingIn) {
         return '/login';

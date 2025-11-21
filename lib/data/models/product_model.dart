@@ -27,7 +27,8 @@ class ProductModel extends Equatable {
       description: json['description'] as String,
       category: json['category'] as String,
       thumbnail: json['thumbnail'] as String,
-      images: (json['images'] as List<dynamic>).map((e) => e as String).toList(),
+      images:
+          (json['images'] as List<dynamic>).map((e) => e as String).toList(),
     );
   }
 
@@ -44,5 +45,6 @@ class ProductModel extends Equatable {
   }
 
   @override
-  List<Object?> get props => [id, title, price, description, category, thumbnail, images];
+  List<Object?> get props =>
+      [id, title, price, description, category, thumbnail, images];
 }

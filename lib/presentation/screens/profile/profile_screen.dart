@@ -25,7 +25,8 @@ class ProfileScreen extends StatelessWidget {
             border: Border.all(color: const Color(0xFFFFD4E5), width: 2),
           ),
           child: IconButton(
-            icon: const Icon(Icons.arrow_back_rounded, color: Color(0xFFFF69B4)),
+            icon:
+                const Icon(Icons.arrow_back_rounded, color: Color(0xFFFF69B4)),
             onPressed: () => context.go('/catalog'),
           ),
         ),
@@ -62,7 +63,8 @@ class ProfileScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: const Color(0xFFFFE4F5),
                         borderRadius: BorderRadius.circular(28),
-                        border: Border.all(color: const Color(0xFFFFD4E5), width: 3),
+                        border: Border.all(
+                            color: const Color(0xFFFFD4E5), width: 3),
                       ),
                       child: Column(
                         children: [
@@ -85,7 +87,8 @@ class ProfileScreen extends StatelessWidget {
                                         width: 100,
                                         height: 100,
                                         fit: BoxFit.cover,
-                                        errorBuilder: (context, error, stackTrace) {
+                                        errorBuilder:
+                                            (context, error, stackTrace) {
                                           return const Icon(
                                             Icons.favorite_rounded,
                                             size: 50,
@@ -112,11 +115,13 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 8),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(16),
-                              border: Border.all(color: const Color(0xFFFFD4E5), width: 2),
+                              border: Border.all(
+                                  color: const Color(0xFFFFD4E5), width: 2),
                             ),
                             child: Text(
                               currentUser.email ?? '',
@@ -131,9 +136,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 20),
-
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -188,9 +191,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 20),
-
                   Transform.rotate(
                     angle: 0.01,
                     child: Container(
@@ -199,7 +200,8 @@ class ProfileScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: const Color(0xFFFFE5E5),
                         borderRadius: BorderRadius.circular(24),
-                        border: Border.all(color: const Color(0xFFFF9FB0), width: 3),
+                        border: Border.all(
+                            color: const Color(0xFFFF9FB0), width: 3),
                       ),
                       child: Material(
                         color: Colors.transparent,
@@ -263,18 +265,24 @@ class ProfileScreen extends StatelessWidget {
                                             child: Container(
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
-                                                borderRadius: BorderRadius.circular(16),
+                                                borderRadius:
+                                                    BorderRadius.circular(16),
                                                 border: Border.all(
-                                                  color: const Color(0xFFFFD4E5),
+                                                  color:
+                                                      const Color(0xFFFFD4E5),
                                                   width: 2,
                                                 ),
                                               ),
                                               child: TextButton(
-                                                onPressed: () => Navigator.pop(context),
+                                                onPressed: () =>
+                                                    Navigator.pop(context),
                                                 style: TextButton.styleFrom(
-                                                  padding: const EdgeInsets.symmetric(vertical: 14),
+                                                  padding: const EdgeInsets
+                                                      .symmetric(vertical: 14),
                                                   shape: RoundedRectangleBorder(
-                                                    borderRadius: BorderRadius.circular(16),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16),
                                                   ),
                                                 ),
                                                 child: const Text(
@@ -293,20 +301,28 @@ class ProfileScreen extends StatelessWidget {
                                             child: Container(
                                               decoration: BoxDecoration(
                                                 color: const Color(0xFFFF6B9D),
-                                                borderRadius: BorderRadius.circular(16),
+                                                borderRadius:
+                                                    BorderRadius.circular(16),
                                               ),
                                               child: ElevatedButton(
                                                 onPressed: () {
-                                                  context.read<AuthViewModel>().signOut();
+                                                  context
+                                                      .read<AuthViewModel>()
+                                                      .signOut();
                                                   Navigator.pop(context);
                                                   context.go('/login');
                                                 },
                                                 style: ElevatedButton.styleFrom(
-                                                  backgroundColor: Colors.transparent,
-                                                  shadowColor: Colors.transparent,
-                                                  padding: const EdgeInsets.symmetric(vertical: 14),
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  shadowColor:
+                                                      Colors.transparent,
+                                                  padding: const EdgeInsets
+                                                      .symmetric(vertical: 14),
                                                   shape: RoundedRectangleBorder(
-                                                    borderRadius: BorderRadius.circular(16),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16),
                                                   ),
                                                 ),
                                                 child: const Text(
@@ -357,7 +373,6 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 40),
                 ],
               ),
