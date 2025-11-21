@@ -6,19 +6,19 @@ class AssetHelper {
     if (!kIsWeb) {
       return localPath;
     }
-    
+
     // Sur le web, les assets sont servis depuis la racine
     // et les chemins dans le JSON contiennent déjà 'assets/'
     if (localPath.startsWith('assets/')) {
       return localPath;
     }
-    
+
     return localPath;
   }
-  
+
   /// Vérifie si un chemin d'asset est valide
   static bool isValidAssetPath(String path) {
-    return path.isNotEmpty && 
-           (path.startsWith('assets/') || path.startsWith('http'));
+    return path.isNotEmpty &&
+        (path.startsWith('assets/') || path.startsWith('http'));
   }
 }

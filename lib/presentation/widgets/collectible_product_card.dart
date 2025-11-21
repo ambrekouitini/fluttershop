@@ -254,12 +254,14 @@ class _CollectibleProductCardState extends State<CollectibleProductCard>
                                 widget.product.thumbnail,
                                 fit: BoxFit.cover,
                                 errorBuilder: (context, error, stackTrace) {
-                                  print('Error loading image: ${widget.product.thumbnail}');
+                                  print(
+                                      'Error loading image: ${widget.product.thumbnail}');
                                   print('Error details: $error');
                                   return Container(
                                     color: const Color(0xFFFFF5F7),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Text(
                                           '✿',

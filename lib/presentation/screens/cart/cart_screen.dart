@@ -312,9 +312,9 @@ class CartScreen extends StatelessWidget {
                                               width: 90,
                                               height: 90,
                                               fit: BoxFit.cover,
-                                              errorBuilder:
-                                                  (context, error, stackTrace) =>
-                                                      Container(
+                                              errorBuilder: (context, error,
+                                                      stackTrace) =>
+                                                  Container(
                                                 width: 90,
                                                 height: 90,
                                                 color: const Color(0xFFFFF0F5),
