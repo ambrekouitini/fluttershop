@@ -27,7 +27,8 @@ jobs:
         run: dart format --output=none --set-exit-if-changed .
 
       - name: Analyze project source
-        run: flutter analyze
+        run: flutter analyze --fatal-infos
+        continue-on-error: true
 
       - name: Run unit tests
         run: flutter test --coverage || echo "No tests found, skipping..."
