@@ -1,0 +1,35 @@
+# Fichiers et dossiers à ignorer lors du déploiement Vercel
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+!build/web/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+test/
+coverage/
+
+# Android/iOS
+android/
+ios/
+macos/
+linux/
+windows/
+
+# Git
+.git/
+.gitignore
