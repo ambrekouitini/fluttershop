@@ -1,8 +1,8 @@
 {
   "framework": null,
-  "buildCommand": "flutter/bin/flutter build web --release",
+  "buildCommand": "flutter build web --release --web-renderer html",
   "outputDirectory": "build/web",
-  "installCommand": "if cd flutter; then git pull && cd .. ; else git clone https://github.com/flutter/flutter.git; fi && flutter/bin/flutter doctor && flutter/bin/flutter clean && flutter/bin/flutter config --enable-web",
+  "installCommand": "git clone https://github.com/flutter/flutter.git -b stable --depth 1 && export PATH=\"$PWD/flutter/bin:$PATH\" && flutter doctor && flutter pub get",
   "rewrites": [
     {
       "source": "/(.*)",
